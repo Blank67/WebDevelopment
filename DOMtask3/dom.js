@@ -37,7 +37,7 @@
 // items[1].style.backgroundColor = 'yellow';
 // //items.style.backgroundColor = '#f4f4f4'; //We can't change color of all the items, to do that we need to loop through it.
 // for(let i=0;i<items.length;i++){ //To change color of all
-//     items[i].style.backgroundColor = '#f4f4f4';
+// items[i].style.backgroundColor = '#f4f4f4';
 // }
 
 
@@ -48,11 +48,27 @@
 // titleClass[0].style.fontWeight = 'bold';
 // titleClass[0].style.color = 'green';
 
-//TASK 4
+// //TASK 4
+// let items = document.getElementsByClassName('list-group-item');
+// items[2].style.backgroundColor = 'green';
+// let i=0;
+// while(i<items.length){
+//     items[i].style.fontWeight = 'bold';
+//     i++;
+// }
+
+//TASK 5
 let items = document.getElementsByClassName('list-group-item');
-items[2].style.backgroundColor = 'green';
 let i=0;
 while(i<items.length){
+    items[i].style.backgroundColor = '#f4f4f4';
     items[i].style.fontWeight = 'bold';
     i++;
+}
+let itemsTag = document.getElementsByTagName('li');
+let j=0;
+while(j<itemsTag.length){
+    itemsTag[j].style.backgroundColor = '#f4f4f4';
+    itemsTag[j].style.fontWeight = 'bold';
+    j++;
 }
