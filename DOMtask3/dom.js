@@ -41,9 +41,18 @@
 // }
 
 
-//TASK 3
-let header = document.getElementById('main-header');
-header.style.borderBottom = 'solid 3px #000';
-let titleClass = document.getElementsByClassName('title');
-titleClass[0].style.fontWeight = 'bold';
-titleClass[0].style.color = 'green';
+// //TASK 3
+// let header = document.getElementById('main-header');
+// header.style.borderBottom = 'solid 3px #000';
+// let titleClass = document.getElementsByClassName('title');
+// titleClass[0].style.fontWeight = 'bold';
+// titleClass[0].style.color = 'green';
+
+//TASK 4
+let items = document.getElementsByClassName('list-group-item');
+items[2].style.backgroundColor = 'green';
+let i=0;
+while(i<items.length){
+    items[i].style.fontWeight = 'bold';
+    i++;
+}
