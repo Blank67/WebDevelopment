@@ -36,6 +36,7 @@ function addItem(e){
     editBtn.appendChild(document.createTextNode('Edit'));
     li.appendChild(editBtn);
     itemList.appendChild(li);
+    localStorage.setItem(newItem,newDescription);
 }
 
 function removeItem(e){
@@ -78,3 +79,7 @@ function filterItems(e){
         }
     })
 }
+
+// localStorage.setItem('name','bob');
+// console.log(localStorage.getItem('name'));;
+// localStorage.removeItem('name');
