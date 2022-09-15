@@ -96,7 +96,20 @@ function addItem(e){
     //Adding rest of the data in local storage
     const userName = document.querySelector('#user').value;
     const email = document.querySelector('#email').value;
-    localStorage.setItem('userName',userName);
-    localStorage.setItem('email',email);
-    localStorage.setItem('itemName',newItem);
+    // localStorage.setItem('userName',userName);
+    // localStorage.setItem('email',email);
+    // localStorage.setItem('itemName',newItem);
+    //As data is overwritten in local storage we store it as object.
+    const userObj = {
+        email : email,
+        userName : userName,
+        itemName : newItem
+    };
+    //Convert obj into string
+    const userObj_serialized = JSON.stringify(userObj);
+    console.log(userObj_serialized);
+    localStorage.setItem('userObj1',userObj_serialized);
+    //Convert string to its obj
+    const userObj_deserialized = JSON.parse(userObj_serialized);
+    console.log(userObj_deserialized);
 }
