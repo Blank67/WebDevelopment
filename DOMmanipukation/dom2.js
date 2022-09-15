@@ -99,7 +99,7 @@ function addItem(e){
     // localStorage.setItem('userName',userName);
     // localStorage.setItem('email',email);
     // localStorage.setItem('itemName',newItem);
-    //As data is overwritten in local storage we store it as object.
+    //Store data in local storage as object.
     const userObj = {
         email : email,
         userName : userName,
@@ -108,7 +108,7 @@ function addItem(e){
     //Convert obj into string
     const userObj_serialized = JSON.stringify(userObj);
     console.log(userObj_serialized);
-    localStorage.setItem('userObj1',userObj_serialized);
+    localStorage.setItem(email,userObj_serialized);
     //Convert string to its obj
     const userObj_deserialized = JSON.parse(userObj_serialized);
     console.log(userObj_deserialized);
