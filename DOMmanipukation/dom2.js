@@ -1,5 +1,5 @@
 //Traversing DOM
-let itemList = document.querySelector('#items');
+// let itemList = document.querySelector('#items');
 
 // //parent Node
 // console.log(itemList.parentNode);
@@ -60,20 +60,43 @@ let itemList = document.querySelector('#items');
 // newDiv.style.fontSize = '30px';
 // container.insertBefore(newDiv,h1);
 
-//TASK 7
-const newDiv = document.createElement('div');
-newDiv.id = 'newDiv';
-// console.log(newDiv);
-const divText = document.createTextNode('HEllo');
-newDiv.appendChild(divText);
-const container = document.querySelector('header .container');
-// console.log(container);
-const h1 = document.querySelector('header h1');
-// console.log(h1);
-container.insertBefore(newDiv,h1);
+// //TASK 7
+// const newDiv = document.createElement('div');
+// newDiv.id = 'newDiv';
+// // console.log(newDiv);
+// const divText = document.createTextNode('HEllo');
+// newDiv.appendChild(divText);
+// const container = document.querySelector('header .container');
+// // console.log(container);
+// const h1 = document.querySelector('header h1');
+// // console.log(h1);
+// container.insertBefore(newDiv,h1);
 
-const itmLst = document.querySelector('div .list-group');
-// console.log(itmLst);
-const li = document.querySelector('div li');
-// console.log(li);
-itmLst.insertBefore(newDiv,li);
+// const itmLst = document.querySelector('div .list-group');
+// // console.log(itmLst);
+// const li = document.querySelector('div li');
+// // console.log(li);
+// itmLst.insertBefore(newDiv,li);
+
+// TASK 10
+const form = document.querySelector('#addForm');
+let itemList = document.querySelector('#items');
+form.addEventListener('submit',addItem);
+
+function addItem(e){
+    e.preventDefault();
+    //Get text from Item Field 
+    const newItem = document.querySelector('#item').value;
+    //Create li to store that item
+    const li = document.createElement('li');
+    li.className = 'list-group-item';
+    //Add text to li
+    li.appendChild(document.createTextNode(newItem));
+    itemList.appendChild(li);
+    //Adding rest of the data in local storage
+    const userName = document.querySelector('#user').value;
+    const email = document.querySelector('#email').value;
+    localStorage.setItem('userName',userName);
+    localStorage.setItem('email',email);
+    localStorage.setItem('itemName',newItem);
+}
