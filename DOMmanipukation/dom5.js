@@ -1,7 +1,23 @@
 // TASK 13
 const form = document.querySelector('#addForm');
-let itemList = document.querySelector('#items');
+const itemList = document.querySelector('#items');
 form.addEventListener('submit',saveToLocal);
+
+window.addEventListener('DOMContentLoaded',() => {
+    const localStorageObj = localStorage;
+    console.log(`localStorageObj---> ${localStorageObj}`);
+    const localStorageKeys = Object.keys(localStorageObj);
+    console.log(`localStorageKeys---> ${localStorageKeys}`);
+    for(let i=0;i<localStorageKeys.length;i++){
+        const key = localStorageKeys[i];
+        console.log(key);
+        const userDetailsString = localStorageObj[key];
+        console.log(userDetailsString);
+        const userDetailsObj = JSON.parse(userDetailsString);
+        console.log(userDetailsObj);
+        showNewUserOnScreen(userDetailsObj);
+    }
+});
 
 function saveToLocal(e){
     e.preventDefault();
@@ -16,17 +32,6 @@ function saveToLocal(e){
     localStorage.setItem(obj.email,JSON.stringify(obj));
     showNewUserOnScreen(obj);
 }
-
-window.addEventListener('DOMContentLoaded',() => {
-    const localStorageObj = localStorage;
-    const localStorageKeys = Object.keys(localStorageObj);
-    for(let i=0;i<localStorageKeys.length;i++){
-        const key = localStorageKeys[i];
-        const userDetailsString = localStorageObj[key];
-        const userDetailsObj = JSON.parse(userDetailsString);
-        showNewUserOnScreen(userDetailsObj);
-    }
-});
 
 function showNewUserOnScreen(user){
     document.querySelector('#item').value = '';
