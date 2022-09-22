@@ -1,3 +1,4 @@
+"use strict";
 // // const cleanTable = function(){
 // //     console.log(`Cleaning ${this.table}.`);
 // // }
